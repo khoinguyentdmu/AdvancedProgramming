@@ -1,10 +1,7 @@
 package tdmu.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import tdmu.model.ToDo;
 import tdmu.service.ToDoService;
 
@@ -23,7 +20,12 @@ public class ToDoListController {
     }
 
     @RequestMapping(value = "", method = RequestMethod.POST)
-    public String createStudent(@RequestBody ToDo toDo) {
+    public String createToDo(@RequestBody ToDo toDo) {
         return toDoService.createToDo(toDo);
+    }
+
+    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+    public void deleteToDo(@PathVariable Long id) {
+        toDoService.deleteTodo(id);
     }
 }

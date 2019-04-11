@@ -25,4 +25,9 @@ public class ToDoServiceImpl implements ToDoService {
 
         return "Create successfully!";
     }
+
+    public void deleteTodo(Long id) {
+
+        toDoRepository.deleteById(id);
+    }
 }
