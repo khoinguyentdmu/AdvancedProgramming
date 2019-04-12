@@ -14,16 +14,19 @@ public class ToDoListController {
     @Autowired
     private ToDoService toDoService;
 
+    @CrossOrigin
     @RequestMapping(value = "", method = RequestMethod.GET)
     public List<ToDo> getAll() {
         return toDoService.findAll();
     }
 
+    @CrossOrigin
     @RequestMapping(value = "", method = RequestMethod.POST)
     public String createToDo(@RequestBody ToDo toDo) {
         return toDoService.createToDo(toDo);
     }
 
+    @CrossOrigin
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     public void deleteToDo(@PathVariable Long id) {
         toDoService.deleteTodo(id);
