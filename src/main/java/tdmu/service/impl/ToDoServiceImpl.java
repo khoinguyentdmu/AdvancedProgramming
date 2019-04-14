@@ -18,12 +18,12 @@ public class ToDoServiceImpl implements ToDoService {
         return toDoRepository.findAll();
     }
 
-    public String createToDo(ToDo toDo) {
+    public void createToDo(ToDo toDo) {
 
         toDo.setCreated_at(System.currentTimeMillis());
         ToDo savedToDo = toDoRepository.save(toDo);
 
-        return "Create successfully!";
+//        return "Create successfully!";
     }
 
     public void deleteTodo(Long id) {

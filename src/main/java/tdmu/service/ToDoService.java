@@ -8,7 +8,7 @@ public interface ToDoService {
 
     List<ToDo> findAll();
 
-    String createToDo(ToDo toDo);
+    void createToDo(ToDo toDo);
 
     void deleteTodo(Long id);
 }

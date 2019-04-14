@@ -22,8 +22,8 @@ public class ToDoListController {
 
     @CrossOrigin
     @RequestMapping(value = "", method = RequestMethod.POST)
-    public String createToDo(@RequestBody ToDo toDo) {
-        return toDoService.createToDo(toDo);
+    public void createToDo(@RequestBody ToDo toDo) {
+        toDoService.createToDo(toDo);
     }
 
     @CrossOrigin
