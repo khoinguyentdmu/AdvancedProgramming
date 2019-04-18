@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Task } from './model/Task';
 import { ToDoService } from './service/to-do.service';
 import { ToDo } from './model/ToDo';
 
